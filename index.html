@@ -1,0 +1,1321 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVUPoetry</title>
+    <script src="libraries/p5.js" type="text/javascript"></script>
+
+    <script src="libraries/p5.dom.js" type="text/javascript"></script>
+    <script src="libraries/p5.sound.js" type="text/javascript"></script>
+
+    <script src="sketch.js" type="text/javascript"></script>
+    <script src="markovword.js" type="text/javascript"></script>
+
+    <style>
+        body {
+            padding: 20px;
+            background-color: black;
+            color: white;
+        }
+
+        .markov {
+            padding: 16px;
+            background-color: #000;
+            font-family: courier;
+            font-size: 160%;
+            color: white;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <img src="http://img30.photobucket.com/albums/v90/captain_sam/svu_logo.jpg">
+
+
+    <p>
+        <!-- Input text:<br/> -->
+        <textarea id="text" cols="100" rows="10">
+        In the criminal justice system, sexually based offenses are considered especially heinous.
+        In New York City, the dedicated detectives who investigate these vicious felonies are members of an elite squad known as the Special Victims Unit.
+        These are their stories.
+        - Stop that man! Stop him! - Hey! Police! Stop! Previously on Law & Order: SVU Williams Lewis, we have three witnesses we saw him expose himself in Central Park.
+        - How bad's his record? - We don't know.
+        We can't run his prints, because his fingers are burned.
+        I can't plaid guilty to something I didn't do.
+        Defendant is released.
+        - Case to be set over for trial.
+        - We're gonna need you to testify.
+        - If you'll excuse me - You did very well darling.
+        It's Lewis.
+        He broke into her apartment, raped - and tortured her for eighteen hours.
+        - Find him.
+        Police! Don't move! You want to hear how I tied her to the bed.
+        She did things that she never expected to do.
+        What you did to her You're lucky I didn't kick your teeth in.
+        What I did you should be so lucky someone does that to you.
+        The state's relentless harassment has taken a toll on my client.
+        The judge declared a mistrial.
+        He's out on bail.
+        This guy he knows every trick.
+        Go home.
+        Stay there two days.
+        - Captain, that's - Liv, that's an order.
+        Hello? Welcome home, Detective Benson.
+        Hey.
+        There she is.
+        Those big, beautiful brown eyes So beautiful.
+        Give me a smile.
+        Still feeling woozy, huh? That's all right.
+        We got time.
+        Oh, come on, don't be shy.
+        We're past that.
+        You've been so sweet when you were knocked out.
+        Another drink? Oh, why don't I take off that tape so you can say yes? One thing you scream again, I'll shove your own gun right down your throat.
+        You know what? Shoot me.
+        That's the endgame, sweetheart.
+        We got a lot of shock and awe to go before we do that.
+        Hey, it's Liv.
+        Leave a message.
+        I'll get back to you.
+        Hey, Liv, it's me.
+        We were talking about getting together.
+        That's probably my boyfriend.
+        He's N.
+        Y.
+        P.
+        D.
+        He's on his way over here now.
+        Boyfriend, huh? - Yes.
+        - Does he have keys? Yes, he does.
+        It's funny that I don't see much of his stuff around.
+        One robe in the bathroom, one toothbrush.
+        You wouldn't lie to me, would you? Let's think about what you're doing now.
+        Oh, I'm thinking about it.
+        You walk out that door right now, no one will know anything happened to me.
+        What about that pert little detective, the blonde one, huh? She's not gonna notice all the bruises, all the cuts? Cab stopped short.
+        I hit my face on the divider.
+        What about this? What about these burns, huh? She's like a dog with a bone, that one.
+        So what? You've done far worse and gotten away with it.
+        Your lawyer friend, the redhead she'll accuse N.
+        Y.
+        P.
+        D.
+        of framing you after the trial.
+        - Mistrial.
+        - Lewis, go.
+        Get the hell out of New York.
+        You walk out that door, and we will pretend that this never happened.
+        You'd pretend that this didn't happen, would you? You're lying.
+        There's something I think that you should hear.
+        Hey, Liv, it's me.
+        Uh, look, I know we were talking about getting together, um, tomorrow, but these guys are jerking me around over here.
+        I got to pull a double.
+        Uh, anyway, don't be mad at me.
+        Hey, I'm the one stuck at the Bronx courthouse, right? I'm sorry about this.
+        I owe you one.
+        All right, bye.
+        Guess he's not coming.
+        Billy I'm offering you a way out.
+        You're still bargaining with me? Really? We're past that.
+        I'm an N.
+        Y.
+        P.
+        D.
+        detective.
+        My partner, my squad the entire department will hunt you down.
+        You think that you've put people through hell.
+        It will rain back down on you.
+        You know what? Let it rain.
+        Hey ***, you haven't paid your coffee *** since March.
+        Well I don't drink coffee.
+        You know, the unis see that as bad for morale - A detective not putting in.
+        - Seriously? All right, here's a a 10.
+        What, 20? Please, don't make me beg.
+        It's beneath my dignity.
+        - All right, fine.
+        30.
+        - Today you are a man.
+        I thought you didn't drink coffee.
+        Well, I'm paying for it.
+        I'm taking it.
+        - Yo, Munchie Munch.
+        - Brian, flowers You didn't have to.
+        Dream on, pal.
+        Hey, have you seen Liv? - Cragen gave her two days off.
+        - She didn't tell you? No.
+        We were supposed to hook up yesterday, but I got roped into a double shift, so So you stood her up.
+        Nice move.
+        I left her a couple messages.
+        I haven't heard back from her.
+        - Hey, Brian.
+        - Hey, Cap.
+        - How's Liv doing? - He hasn't seen her.
+        When's the last me you spoke to her? Uh, Monday.
+        I left a few messages.
+        Well, she was pretty down when Lewis got released.
+        Yeah, well, can you blame her? They just let this guy walk? Come on.
+        It went straight to voice mail.
+        Hey, Liv, it's Nick.
+        Give me a call.
+        You know Liv she can't turn it off.
+        She's probably deep into his case file by now.
+        - Still.
+        - Captain.
+        Pizza boy folded like a slice.
+        All right, good work.
+        Uh, listen, I need a favor before you two punch out just swing by Liv's apartment.
+        Yeah.
+        Everything all right? Yeah, I just want to make sure she hasn't gone down one of her rabbit holes.
+        Hey, Cassidy, you coming with? Uh, no, I'm back on tour in 30.
+        Hey, Ollins, if you talk to her, will you have her give me a call? Easy, Romeo.
+        Just check in on her.
+        She's not picking up her landline.
+        Yeah, well, the girl had a tough week.
+        I mean, she could just be catching up on her sleep.
+        Liv! Okay, so either she didn't come home, or she hasn't left her apartment in two days.
+        It's Fin! Liv! It's him.
+        It's Lewis.
+        Yeah, he tied her up.
+        He duct-taped her mouth.
+        Her hair, her blood Captain, i it's everywhere.
+        He might have taken her down the fire escape.
+        The window's open.
+        Her bedding's gone.
+        Any sign of her cell? No, it's not in the apartment, but Taru's tracking it.
+        Canvass the building, the neighborhood.
+        Check all surveillance cams.
+        There's a pan on the stove with keys.
+        It smells like burnt hair or flesh.
+        Son of a bitch.
+        A detective has been kidnapped.
+        You bag everything.
+        I got to call one P.
+        P.
+        You find him.
+        We got a ping off her cell.
+        It's Bushwick Lewis' halfway house.
+        Where is he? Where's Lewis? - I don't know.
+        I swear.
+        - He was here! What? N no.
+        N no way, hand to God.
+        - Was she with him? - Who? Where's her phone? I don't know about no phone.
+        No? What's this? Uh, dude, I had no idea he left that.
+        He said not to tell anybody he was here.
+        That guy's crazy.
+        - When? - Uh, I - Yesterday morning, early.
+        - What time? Really early, before breakfast.
+        - What did he want? - My car.
+        - You got a car? - Yes, my aunt's Lincoln.
+        - Where'd he go? - I don't know.
+        - He asked how much gas was in it.
+        - Where was he going? I don't ask him that stuff.
+        He was in a real rush.
+        He didn't want to keep her waiting.
+        - "Her"? Who? - That lawyer the one who got him off.
+        Your Honor, my client has ties to the community, no record.
+        We request she be released on her own recognizance.
+        - Your Honor, if we could.
+        - Order.
+        This is an urgent police matter.
+        We need to question Counselor Mayer.
+        We're in the middle of an arraignment.
+        - I understand that.
+        - Captain Donald Cragen, SVU.
+        Your Honor, Counselor Mayer may have information about a suspect who's holding an N.
+        Y.
+        P.
+        D.
+        detective hostage.
+        Lewis was right.
+        You do have a vendetta against him.
+        Counselor, your client broke into Detective Benson's apartment two nights ago.
+        Now, he either killed her, or he's holding her captive.
+        You're out of your mind.
+        I just saw him.
+        When? Where? This is harassment.
+        I don't have to answer your questions.
+        Counselor, hey.
+        Look, these these are pictures from that Detective's apartment.
+        You have the wrong suspect.
+        I was with him all day yesterday.
+        Where? We drove out to Long Island.
+        - In a Lincoln? - Yes.
+        He stole it.
+        Where'd you go? He said he wanted to go to the beach to clear his head.
+        Okay, so, on this drive, did he did he stop the car? - Did he ever check the trunk? - No.
+        We have reason to believe Detective Benson was in that car.
+        - No, the car was empty.
+        - Did you stop anywhere? I had to get back to the city.
+        And before he dropped me at the train station, - we stopped for dinner.
+        - Where? At my parents' house in Bellport.
+        Were they there? There's the car.
+        Fin, check the trunk.
+        William Lewis, N.
+        Y.
+        P.
+        D.
+        I got one.
+        He's cold.
+        He's been here a while.
+        - There's a blood trail.
+        - I got a bedspread.
+        That's lot of blood.
+        Whoa.
+        Liv's necklace hidden by the spare tire.
+        She left that for us.
+        Okay, she was alive in the trunk.
+        Canvass every house on the block.
+        He took their car.
+        Call that lawyer girlfriend, find out what her parents drive.
+        They spent some time here.
+        Nick.
+        Dear lord.
+        She's alive.
+        Help me get her down.
+        Get an ambulance, now! My daughter brought him.
+        We all had supper together.
+        He drove her to the train station.
+        And then he came back.
+        Can you tell me what happened after Lewis came back? He held a gun on me, and he m made me take off my clothes.
+        He made oh, God.
+        He made her watch while he raped me.
+        And this woman did she say anything? No.
+        She had duct tape on her mouth.
+        He told her to keep her eyes open.
+        Anytime she tried to close them, he held put a lit lit cigarette on me.
+        Was this woman was she with him when he left? - Detective.
+        - She she passed out.
+        She was alive.
+        Could you tell that she was alive? You're done, Detective.
+        No hit on their E-ZPass, we've got alarms out on the couple's S.
+        U.
+        Vs.
+        Their credit cards, bank cards.
+        Will do.
+        They still don't know where she is? What the hell are they doing? Everything they possibly can, Brian.
+        - Yeah, I'm going out there.
+        - You can't go out there.
+        - You're involved with the victim.
+        - Victim? They've got the zone flooded State Troopers, Suffolk P.
+        D.
+        , N.
+        Y.
+        P.
+        D.
+        You won't see something they don't.
+        Two days, Munch - What's he doing to her, man? - You can't think like that.
+        - If she's even still alive.
+        - Liv's alive.
+        She's a survivor.
+        Hey, I'm back.
+        I got us some supplies.
+        What, are you resting? Upsy-Daisy.
+        That a girl.
+        There you go.
+        Okay, arms behind your back.
+        There you go.
+        There you go.
+        Okay.
+        Man I love hardware stores.
+        I got a tarp, some rope, uh, extra duct tape, some surprises for later, and some drinks.
+        How's that sound, huh? If I take the tape off, you'll be a good girl? Yeah? Okay.
+        There you go.
+        You thirsty, sweetheart? Yeah? Here you go.
+        Oh, no, no, no.
+        Hey, hey.
+        You don't get to say "no" anymore Okay? All right, you have some vodka, and I'll give you some water Okay? That's it.
+        Suck it down.
+        Suck it down.
+        Yeah, that's it.
+        Swallow.
+        The Vicodin and the sleeping pills they give you dry mouth, right? - Water.
+        - I know.
+        I promised.
+        I'm a man of my word Like when I told you about that lady.
+        And I told you what I was gonna do to her, right? I told her everything, and then I did everything that I said, didn't I? Didn't I? Yeah.
+        There you go.
+        Okay, that's enough.
+        I think we're gonna find it soon.
+        - Find what? - Someplace special.
+        One move, lights out.
+        I'll do you cold.
+        Hey, Captain, any word? They're still searching.
+        The last witness we have saw her alive.
+        - Was Liv okay? - Compared to the witness, yeah.
+        We know this guy's car.
+        We we know where he's been.
+        What, he just ups and disappears? But he's done this before, okay? Uh, Munch and I have gone over his M.
+        O.
+        Lewis doesn't preplan.
+        He's a savant, instinctual.
+        But he does follow certain patterns.
+        He's like a cat playing with a mouse.
+        When he can, he moves them to a safe house.
+        He takes his time.
+        Kentucky, his girlfriend's mother he offers her a lift in the circle "K" parking lot.
+        He stops at a hardware store.
+        He gets duct tape, rope, and a soldering iron.
+        Then he stops at a liquor store.
+        Right, and he ties the vic up.
+        I mean, he force-feeds her alcohol, drugs.
+        He he drives around until he can find an abandoned mobile home out in the woods.
+        He works her, and he leaves her there.
+        A hunter finds her.
+        - And the two girls in Alabama.
+        - Roommates.
+        He breaks into their apartment, puts them in the trunk of their own car.
+        He drives them to a fishing cabin.
+        Then he holds them there for three days.
+        He rapes, tortures.
+        Um, he leaves them there tied up, but they manage to escape.
+        So he lets them all live.
+        Not always.
+        His first lawyer girlfriend, in Maryland he took her to a foreclosed house.
+        He holds her there for almost two days, - leaves her for dead.
+        - No news is good news.
+        The car hasn't been spotted on any bridges, tunnels, - or ferries.
+        - Okay.
+        Then he's still on Long Island.
+        Well, yeah, well, he told his lawyer that he wanted to clear his mind, go to the beach.
+        The beach in Long Island? Which beach, hmm? North shore, South shore, the bay? Do you know how many beach houses there are in Long Island? Oh, come on.
+        He's young.
+        One move, and he's dead.
+        Good evening, officer.
+        Is there a problem? You know you ran through a blinking red light back there? Oh, I did? I looked both ways.
+        Slow night, right? I'm sorry.
+        I really should know better.
+        Well, can I see your license and registration? Yeah.
+        Yeah, of course.
+        Uh, the registration's in the glove compartment.
+        It's my in-laws' car.
+        There it is.
+        And the license? Yeah.
+        I left the house in such a rush.
+        I must've left my wallet.
+        What's that on the floor there? - You been drinking? - What? Oh, no.
+        No, officer.
+        What do you got back there? Where? I think your job here is done.
+        Officer Jimmy Hamilton.
+        Three months on the job, shot once in the head.
+        - Lewis took his gun and badge.
+        - Anything in the vehicle? Traces of blood and hair.
+        He had Liv on the floor of the backseat.
+        And that's Hamilton's squad car? Lewis used it to pull over another driver pistol-whipped her, locked her and her baby in the squad car trunk, drove off in her minivan.
+        We got a BOLO out on a white minivan with Connecticut plates.
+        He'll ditch that as soon as he can, go to ground.
+        We've moved the grid search east and south, checking every home, foreclosed home, second home, even boats, from here to the water's edge.
+        All right, check hardware stores, gas stations, anywhere they could've stopped between here and Montauk.
+        I got to lose the car.
+        It won't take me that long, though.
+        Are you gonna miss me? Hmm? Of course.
+        It's been a long time.
+        All that vodka, right? Let's go.
+        Do you need help? I can help you.
+        Yeah, that's the guy.
+        He said he was using his wife's credit card.
+        Hey, my terminal was down last night.
+        I didn't know it was stolen till I ran the card this morning.
+        - Well, was his wife with him? - No.
+        - He said she was in the car.
+        - When? When I was closing up.
+        Let me check the receipts.
+        Uh, 7:45.
+        What did he buy? Tarp, rope, wire, hand-held blowtorch.
+        I didn't know this.
+        He said he and his wife were going camping.
+        Look at you.
+        You going somewhere? Not without me, you're not.
+        I told I'd be right back.
+        We'll cuff your hands right here.
+        We'll tie up your feet Right here.
+        Oh, man A real old-fashioned iron-frame bed.
+        This I knew this place would be perfect.
+        You want me to burn your clothes off or cut them off? Scissors I need some scissors.
+        Where's the scissors? There's got to be some scissors around here, right? Oh, not in here the kitchen.
+        Nope.
+        No luck.
+        Oh, wait a second.
+        That's pretty perfect.
+        What's that look? Are you feeling sad? Thinking about someone you're never gonna see again Mom Dad Boyfriend? No, huh? Someone else someone who you would give anything to see just one more time.
+        You're gonna cry his name out at some point.
+        They always do.
+        Well, just try to put him out of your mind, okay? 'Cause you don't make it out of here alive.
+        You know what? You might want to keep me around.
+        I know what you like.
+        Well, then you've been holding out on me.
+        Yes, but that's what you want, isn't it? Hard to get and then begging for it.
+        Hmm? I know how to get you off.
+        - You do? - Yeah.
+        Kentucky Alabama I've seen the photos.
+        I probably know more details about it than you remember.
+        Oh, I doubt that.
+        I've seen a lot of things, but I've never seen anything like this.
+        You're not some punk.
+        - Don't try and play me now.
+        - No, I'm not playing you.
+        No, 'cause I know you don't like that.
+        Those two girls at the cabin you hung one by her arm in the closet, and you made her listen while you did the other one for two days.
+        Did you did you even sleep? I don't need sleep, not after I get on a roll.
+        You're gonna find that out.
+        - When? - Now.
+        Well, then you might want to loosen these cuffs or take them off.
+        Yeah? - Is that right? - Yeah.
+        I know you like a struggle.
+        You want to show me how strong you are, overpower me, pin my arms behind my back.
+        - No.
+        - Come on.
+        No! You don't tell me what to do.
+        Okay? Now you say I want to live.
+        I'll do anything.
+        I'll do anything anything.
+        - I'll do anything.
+        - Yeah.
+        Yes, you will.
+        Help! Miss Linda, is that you? I can't find the key! Shut Up.
+        Hi.
+        - Can I help you? - Oh, I'm sorry.
+        Miss Linda wanted me to come before the weekend.
+        She didn't tell me anyone was staying here.
+        Yeah, it was a last-minute kind of thing.
+        I'm supposed to clean in here.
+        - I'll call Miss Linda.
+        - Oh, no, no, no.
+        Don't worry about it.
+        Who is this, huh? Who's this beautiful little girl? This is my daughter, Luisa.
+        Miss Linda knows I bring her.
+        Luisa.
+        ¿Cuantos años, Luisa cinco, seis? - Luisa, vamonos.
+        - ¿Cómo estás, Luisa? - Bien.
+        - Bien.
+        Yay.
+        - We'll come back later.
+        - No, no.
+        No.
+        No, stay.
+        I think I saw some ice pops in the freezer.
+        Come on inside.
+        Just come inside.
+        - Luisa.
+        - Come on.
+        I come home, there's a strange car in the driveway the one I saw on the news, so I called 911.
+        - You see anyone in the house? - I didn't go inside.
+        Police told me to wait for you guys.
+        Whose bike is that? Oh, my God.
+        That's Janey's, my daughter.
+        All right, just wait here, Mr.
+        Thurber.
+        Come on.
+        William Lewis, police.
+        Liv.
+        Don't shoot.
+        Don't shoot.
+        Daddy! I hate to be rude, but we have to hurry.
+        We have company.
+        The maid showed up with her five-year-old daughter sweet little Luisa.
+        - What did you do? - Nothing yet.
+        That little one she's a cutie.
+        Little girls, huh? Old ladies.
+        What is it with you? Are you afraid of me? Oh, no, sweetheart.
+        I was just hoping we could take our time.
+        We've been together for four days.
+        There's a lot of talk, but there's not a lot of action.
+        It's coming, baby.
+        I wonder if if you're not man enough to get it up for a real woman.
+        - I just wondered about that.
+        - Huh? You see, I profiled you a tyrannical sadist who preys on the weak.
+        I think you're afraid of me.
+        I do.
+        Do I look afraid to you? I think you're afraid of me.
+        Let's get to the action.
+        Don't move.
+        Why? What are you gonna do? One move lights out.
+        Okay.
+        All right.
+        You want to be in control for a while, baby? I can play that.
+        - Did he hurt you or your little girl? - Estamos bien.
+        Listen, I want you to take your daughter, and I want you to get out of here now.
+        - I call the police.
+        - Listen to me.
+        I am the police.
+        He's a very bad man.
+        Now, he's gonna go away for a long time.
+        Let me ask you a question are you legal? ¿Tiene usted una tarjeta verde? Okay.
+        If the police find out that you are here, they will take away your daughter.
+        Escuchame.
+        No digas nada.
+        ¿Entiende? - Si.
+        - ¿Y tu, entiendes? - Si.
+        - Okay.
+        Ya vete.
+        Hey.
+        Hey, you.
+        You're out cold, are you? I haven't called anybody yet.
+        I think I want you to suffer first.
+        Maybe I could burn you or cut you.
+        Or I could use the blowtorch on you.
+        But you might enjoy that too much.
+        See, you you'd know what to do.
+        Your whole life, you know what you want, and you just do it.
+        What I want to do I want to shoot you in the head right now, watch you bleed out.
+        Or maybe that's too easy.
+        My old partner he'd know what to do.
+        He wouldn't question himself after what you've done.
+        He would kick your teeth in, break your legs, break your arms, break your back, break your face.
+        Maybe I should call him.
+        Maybe I should get him to use that metal bar on you huh? And make you beg for your life.
+        Then do it.
+        Do something.
+        Please, God, that speech that's the saddest thing I ever heard in my life.
+        Shut up.
+        Your partner would know what to do.
+        I would know what to do, and you just stand there wondering what to do.
+        - I will hurt you.
+        - Then take the cuffs off.
+        - Stop talking.
+        - Or what? Are you gonna shoot me? You don't have it in you.
+        You want to, but you can't, 'cause you're a nice girl.
+        You don't know who you're dealing with.
+        That old partner of yours well, he sounds very macho, doesn't he? No.
+        It must've been tough for you all those long nights alone in the car.
+        You don't get to talk about him.
+        Did he ever do you? He did, didn't he? You still want him.
+        I can hear it in your voice.
+        - You're all bottled up.
+        - Yeah.
+        All your life, you've been listening to stories women telling you about the worst night of their life.
+        - Shut up! - What about you, huh? - What are you working through? - Shut up! I said shut up.
+        Something your daddy did to you? - Is that it? - Shut up! I'm onto something, aren't I? Yeah, call me what you want, but I can always smell a victim! - Yes! - Can you smell that? That's it.
+        There's the spunk.
+        Point taken.
+        I got it.
+        Daddy's off-limits, right? Okay.
+        Why don't I talk about mine, then? How about you don't? I'm not interested.
+        - No, you are.
+        You are.
+        - I don't want to hear it.
+        My daddy well he used to leave me at my babysitter's.
+        He used to put me in front of the TV to watch cartoons, and he'd take her in the back and do her on the water bed.
+        One day, he got wasted.
+        He passed out, right? She comes out of the room.
+        She asks me if I want to play.
+        She puts me in her mouth.
+        God, it felt good.
+        Then my daddy came out.
+        He slaps her in the face.
+        She's bleeding from the nose and the mouth.
+        Then he grabs her, pulls her pants down, and does her on the floor, hard, while she's screaming, begging him to stop.
+        While you watched.
+        Are you kidding me? Am I supposed to feel sorry for you? Sorry? Oh, no, honey.
+        I think you missed the point.
+        My daddy got up, pulled up his pants, brought me to the car, and took me to dairy queen for ice cream.
+        One of the best days of my life the moment I knew what I was put here for.
+        I know what I want.
+        What about you? I do.
+        I know exactly what I want.
+        I want you dead.
+        I want a bullet in your head.
+        That's it.
+        I want you in the ground.
+        Come on.
+        Nobody will miss you.
+        Nobody will mourn you.
+        Oh, just do it.
+        Do it right now.
+        Come on, while you're angry just shoot me.
+        Do it.
+        It's gonna feel so good.
+        Just shoot me.
+        Just shoot me.
+        Don't wait.
+        Don't let this go to trial, baby.
+        I've got a long history of winning streaks.
+        I'm gonna get off, I promise.
+        No, no, no, no, no, no.
+        No.
+        No, come back.
+        I knew it.
+        You don't have the balls.
+        It's over, Liv.
+        It's over now.
+        He's still alive.
+        I don't know how.
+        You did what you had to do.
+        Let's get you out of here.
+        Come on, let's get you out of here.
+        I was able to break free of my restraints.
+        There was a struggle.
+        Uh, I managed to incapacitate the suspect and get the gun.
+        I, uh, got the handcuff key from his pocket.
+        I freed myself, called for backup.
+        And then before help arrived, the suspect tried to escape? He managed to get to a standing position and lunge at me.
+        I used the metal bar from the bed frame to subdue him.
+        Rather than shooting him at point-blank range? I made a judgment call.
+        Thank you, Detective Benson.
+        I'll forward her statement, the case file, the rape kit, and forensics to the D.
+        A.
+        They'll be in touch.
+        Thank you, Detective.
+        Well, as far as the department is concerned, you're a hero.
+        They're gonna want a press tour as soon as you're up to it.
+        - And the lawyer's mother? - She's doing better.
+        She's gonna be released from the hospital tonight.
+        Where's she gonna go now? She can't go back to that house.
+        Where am I gonna go now? Your place is a crime scene.
+        The department will put you up in a hotel.
+        Okay.
+        For how long? Liv, don't worry about it.
+        You got a concussion, a broken wrist, cracked ribs.
+        W what you've been through you're on mandatory leave until you recover, and I don't want any arguments.
+        I'm not gonna give you any.
+        Hey, hey, Captain, there's a there's a lot of press outside.
+        I should get Liv out of here, okay? Okay.
+        Hey.
+        Hey, you want to go to a hotel? Uh maybe your place is a better idea.
+        All right, let's go.
+        And when he was finally subdued, he was handcuffed.
+        He kept taunting me like he knew every raw nerve.
+        You were in a very vulnerable state.
+        It almost seems as if you're blaming yourself.
+        I know better but he still got to me.
+        Got to you? Yeah.
+        Yeah.
+        But not the way you think.
+        Time to wake up, sweetheart.
+        Hey, Liv, I wish you'd let me do this for you.
+        Yeah, I just, uh I wanted to open some windows.
+        You okay? Wait.
+        Let me get that for you.
+        Stop.
+        I got it.
+        All right.
+        - I'm fine.
+        - Right.
+        I'm okay.
+        Two, three I mean, I know that he's locked up, and I know that he can't get to me, but I feel very angry.
+        If I hadn't let my guard down, if somebody had put him away, then he wouldn't have raped Alice Parker or raped Mrs.
+        Mayer or or you.
+        That wasn't rape.
+        That was an assault an ugly, violent one, but But they had it worse.
+        You can take care of yourself.
+        You're fine.
+        - Are you saying that I'm not? - Olivia, I'm suggesting that you've undergone a traumatic experience and that even you are not a superwoman.
+        We went there today.
+        Your apartment? The first time since the assault how was that? Not good.
+        Returning for the first time can be a trigger Yes, I know.
+        I know all about that.
+        Thank you.
+        - I'm sure you do.
+        - I'm sorry.
+        It's just, uh that place it was so dark there.
+        And I realize that I haven't thrived there.
+        We can talk about that some more if you'd like.
+        In our next session? Or not.
+        You know, I I think I think I'm just I'm just ready to go back to work.
+        I know you feel antsy.
+        But right now is SVU the best place for you? Excuse me? I hear you reevaluating your home, your relationship.
+        I wonder if you've given any thought to the toll your job takes.
+        Not for a second.
+        He doesn't get to take that from me.
+        Does the thought of doing something different does that frighten you? What I'm afraid of is walking back to my to my squad room and having everybody look at me and wonder if I'm okay.
+        Hey, guys.
+        What, no cake? We were gonna get you cupcakes.
+        Rollins, I was I was joking.
+        They're they're beautiful.
+        Thank you.
+        It's so nice.
+        Welcome back, Detective Benson.
+        Hi.
+        Want a picture? Come on.
+        - It's Mo-Mo! - Hey Buddy! Hi.
+        - Hi, there.
+        - It's Momo.
+        Hi, Mo-Mo.
+        Hi.
+        Hiya, what's your name? Buddy.
+        - You don't run from me, okay? - Is that your daddy? Do you want him to take a picture of you with Mo-Mo? Ten bucks take a video.
+        - You want a picture, don't you? - Back off.
+        - Hey, don't push me.
+        - Excuse me, please.
+        It's just five bucks per kid.
+        Hey, it's for him.
+        - Whoa.
+        - What? Not again.
+        What's going on? That guy started it.
+        He pushed me.
+        Take the head off, sir.
+        I need to see some I.
+        D.
+        In front of these kids? Pa? Pa? Where's Pa? You here with your dad, son? We'll find him.
+        What's your name? Sorry.
+        Nick, it's okay.
+        You don't like my haircut? It'll grow.
+        Where's your ring? It is what it is.
+        An abandoned kid in Times Square another Mo-Mo incident.
+        Again? What is it with these guys? Go wake up your partner and find out.
+        We got this, Captain.
+        Liv, it's just your second day back.
+        Captain, you're paying me to be here.
+        You sent me home yesterday after two hours.
+        It's a lost kid.
+        Please, I can handle this.
+        Hey, Cap we're good.
+        Okay.
+        - He doesn't know his own name? - Or he won't say or his parent's name or where he lives.
+        Okay, he's young.
+        What, seven, eight? Doesn't know his birthday.
+        He just says he wants to go home.
+        - But he does speak English.
+        - When he speaks, yeah.
+        I don't know something's off developmentally.
+        Could he be autistic? Nah.
+        My nephew's on the spectrum.
+        This is something different.
+        - What about the father? - Okay, thanks.
+        That dad he started it.
+        The boy was he comfortable with him, scared? The dad scared me.
+        And the kid he he was weird, clinging to me like I was real.
+        Hi, there.
+        My name's Olivia.
+        I'm here to help you.
+        Do you understand what I'm saying? Is it okay if I hold your hand? So can you tell me your name? What's your name? Buddy.
+        Buddy.
+        A lost boy and the man with him took off when he saw cops that's not good.
+        All the crowd, the tourists the guy just melted away.
+        Mo-Mo's getting us a police sketch.
+        Taru's checking all the security cameras.
+        Kid show any signs of abuse? Doctors say he's underweight for his age.
+        But he's bright, aware, physically unharmed.
+        We ran his profile through missing persons.
+        There's no matches yet, and his DNA is not in the system.
+        No maternal or paternal hit.
+        Still, it's ***, should be able to tell us something.
+        Ok, Buddy, so who's this? Ma.
+        Ma? Ok.
+        Do you live with Ma.
+        In house.
+        Who are these other two? Auntie and Sissy.
+        She plays with me the most.
+        And that man that you were with today Who was he? No.
+        He'll come back.
+        He'll be mad.
+        So this man, tell me w what's his name? Pa.
+        And you live with Pa? When he's at house.
+        He goes sometimes but he always comes back.
+        So, when Pa comes and goes, do you know where he goes? Don't ask.
+        Be quiet.
+        Then he won't be mad.
+        If you're quiet, you get ice cream or go out.
+        Out out, like today like today when you saw Mo-Mo.
+        So did did you and Pa walk to see Mo-Mo? Yeah, we walked a long way.
+        Then we go up stairs.
+        - Up stairs? - To the train, high up.
+        I look out the window.
+        Then it got dark.
+        Sissy taught me trick to make the walk go fast count the cracks.
+        In the sidewalk? I bet you're a really good counter.
+        Me and Sissy have lots of tricks.
+        We count lots of things.
+        Yeah? Do you count the train stops? That's train.
+        Okay.
+        Good, Buddy.
+        Is there anything you remember hearing, Buddy, maybe at night sirens? Dog one and dog two they bark.
+        I don't like it when they bark.
+        Keep looking out the window, Buddy.
+        Tell me if you see where you walk.
+        That bridge.
+        We cross that bridge.
+        There's lots of cars.
+        It's loud.
+        Okay, how many sidewalk cracks to house? Okay, around this corner? This way? Yes.
+        - To house? - Yeah.
+        Okay, Buddy, tell us if you see house.
+        There house.
+        Police! You sure we got the right place? The kid's positive.
+        - Open up! - You looking for Tony? Tony? The house is owned by Angie Minetti.
+        Yeah, Tony's her son.
+        They live together.
+        Where's Tony right now? I ain't seen him since yesterday.
+        Mr.
+        Minetti! Police! - Left in a hurry.
+        - Nobody's upstairs.
+        Open up.
+        N.
+        Y.
+        P.
+        D.
+        Mr.
+        Minetti? Hello? Anybody in here? What kind of hell is this? One cell two cells three.
+        Hey, there's somebody in here.
+        Hey, come cut this open.
+        Hey.
+        Hey.
+        Gonna need an ambulance.
+        Hey.
+        Hi.
+        Hi.
+        Listen, we're here to help you.
+        We're police.
+        Hey, you're safe.
+        There's no sign of him.
+        He may have left with two other women.
+        It's a house of horrors.
+        It's sick in there.
+        He's got tasers, zip-tie restraints.
+        There's German Shepherds out in the yard.
+        Another Ariel Castro, my God.
+        What do we have on him? The neighbors say he's Tony Minetti, son of homeowner, Angie Minetti.
+        Neighbors know the mother? Nobody has seen her in years, but her social security checks get direct-deposited every week.
+        Neighbors see anything? Three complaints to the local precinct this year, including a woman tied up outside in the doghouse.
+        Cops showed up, no answer.
+        They left.
+        Incredible.
+        This is incredible, incredible.
+        - I had beers with this dude.
+        - You ever been in this house? No, my backyard we'd have a smoke.
+        He was just a regular dude, until today.
+        You never heard or saw anything that didn't seem right? - No, sir.
+        - What about the little boy? Quiet little fella.
+        Tony said it was his girlfriend's nephew.
+        But, you know, it could have been his son.
+        That's Auntie.
+        Can I see Sissy? It's over now.
+        The press is here? Please tell me that you have something.
+        An address on the homeowner's son.
+        Fin and Amaro are en route.
+        - Is the vic any help? - Rollins says she may have issues.
+        - You okay with all this? - Are you? I got a seven-year-old in the car who's spent his entire life in a basement.
+        And God knows what else went on down there.
+        We have no idea where this Pa is or or or who he is.
+        And now the feeding frenzy begins? Welcome back.
+        There's no sign of the other women at Tony Minetti's apartment they're bringing him in.
+        And he claims to have no idea about any of this? What do we know about the first vic? Um, uh, Rhonda Davis, 24 she's been missing since 2002.
+        How did she end up in that basement? Well, Rollins says that it's been very slow going.
+        Um, she seems to have diminished mental capacity.
+        Grew up in Delaware, in and out of foster care.
+        - Any family? - No, the parents are deceased.
+        Last we know, she was living in a group home in Brooklyn.
+        They didn't even report her missing until two years after she ran away.
+        They wanted the government checks to keep coming.
+        Come on.
+        Somebody tell me what's going on.
+        Shut up.
+        I haven't been to that for-crap house in 20 years.
+        So you haven't seen your mother in two decades? No, and if she says I have, she's lying.
+        Where'd you pick her up? I told you.
+        I never seen her before.
+        We found her chained up in your house, in your basement! It's not my house.
+        I don't even like women.
+        So what are you saying you're gay? That's why my mother hates me.
+        When I came out, she spit in my face and told me I was going straight to hell.
+        So, no, I've never seen the girl before.
+        My mother must have set me up.
+        That's not Pa.
+        That's not Pa.
+        I want to get out, out, out.
+        Okay.
+        All right, you want to get out, we can do that.
+        You want to get something to eat? How about some ice cream? No.
+        No ice cream.
+        Sissy says that's for Buddy.
+        Sissy she's a good sister.
+        Can you tell me about her? She sleeps with Pa except when he sleeps with me or Ma except he doesn't sleep.
+        He stays awake and awake and awake.
+        Okay.
+        And Pa, he he took Ma and Sissy with him? Yes.
+        He didn't want me to go.
+        He said only Ma and pumpkin pie.
+        And Sissy's pumpkin pie? That's when she came to live with us.
+        Pa said, she's our pumpkin pie our Thanksgiving blessing.
+        We think one of the girls from the basement is Kayla Greyland.
+        She went missing in the Poconos area nine years ago around Thanksgiving it was a big media case.
+        Buddy I.
+        D.
+        'd the age-progression photo.
+        So this guy's been holding two missing girls for 11 years? What about the third woman? We're checking her sketch against old missing-persons records no hits so far.
+        Could it be Angie Minetti? It's unlikely.
+        Angie's 85.
+        And Angie's real son has no idea who is impersonating him? No.
+        So who is this guy? No mail, no prescription bottles.
+        Utilities, phone all in Angie Minetti's name, paid direct deposit.
+        And C.
+        S.
+        U.
+        ran prints no hits.
+        So you're nowhere closer to finding this guy - or the other two women.
+        - Look, at least we can tell Kayla's parents that their daughter's still alive.
+        Well, take the police sketch.
+        Predators tend to work their own neighborhoods.
+        That doesn't look like anyone we know.
+        The police, after all these years, said we shouldn't expect too much, but you're saying she's alive, with him? - It's possible.
+        - It's I told you.
+        I kept praying every day.
+        They said on the news there were other girls in the house and a little boy.
+        Do we know Well, when you reported Kayla missing, the police didn't collect a DNA sample Kayla's toothbrush or hairbrush? They said there was no point unless they found a body.
+        Okay.
+        Kayla's things you saved them? I have her first lost tooth.
+        He kept her alive nine years.
+        He must be attached.
+        He wouldn't do anything now, would he? C.
+        S.
+        U.
+        found human skeletal remains in the backyard in Greenpoint wrapped in a bedspread.
+        Nice sheets.
+        Liv.
+        Was it another girl? Well, they're checking dental records.
+        - It might be Angie Minetti.
+        - So he kills this old woman.
+        Liv, it may have been natural causes.
+        He buries her in the backyard.
+        The M.
+        E.
+        didn't find any signs of foul play.
+        He keeps cashing her check.
+        He keeps these girls chained, and he keeps raping them over and over.
+        Okay.
+        No, no.
+        Okay.
+        When's the last time you slept? Captain, please.
+        I'm fine.
+        Fine.
+        Even so take a few hours.
+        Okay, you have to stop treating me like I'm broken.
+        Well, nobody is saying that.
+        They found Kayla.
+        She got picked up by New Jersey police shoplifting in Kmart.
+        She wanted to get caught.
+        - Any signs of our suspect? - He bolted.
+        Witness says he was with an older woman in her 30s.
+        They thought the three of them were family.
+        - Kayla, over here.
+        - Kayla, over here.
+        My name is Kayla Greyland.
+        I've been missing from home for nine years.
+        I want to see my mom and my dad, and I want to see Buddy.
+        I just want to go home.
+        Everybody's been so nice, but I don't need to be in a hospital.
+        The doctors just want to make sure that you're okay.
+        I'm fine.
+        When can we take our daughter home? The doctors have a few more tests.
+        We have a few more questions.
+        She doesn't need to be upset right now.
+        Mr.
+        and Mrs.
+        Greyland, let me buy you a cup of coffee.
+        I'm not leaving her ever again.
+        You're daughter's safe here.
+        Mom, dad, it's okay.
+        - You want to come with? - I'm gonna stay.
+        How you doing, Kayla? I'm worried about Buddy.
+        When can I see him again? You know, uh - The doctors just - I'm not gonna hurt him.
+        I told you he's my baby, I swear.
+        And we believe you.
+        Auntie told us that that Buddy's your son but he doesn't know it.
+        No.
+        Pa said our our names were Sissy, Auntie, and Ma.
+        Can you tell us about Ma and Pa? Were they always together? I think so.
+        She was in the car when they When Pa took you? You remember? It was Thanksgiving.
+        I was watching TV at my friend's house, and my mom called and said that the the turkey was ready, so I started walking home.
+        This car pulled up.
+        Ma was driving.
+        And she asked for directions, so I came over.
+        Then the back door opened.
+        Then I just felt jolted.
+        I I I was shaking.
+        They tasered you.
+        When I woke up, I was chained to the wall.
+        There was a bucket.
+        They told me that they were my new family my new Ma and Pa and that I would learn to love them.
+        Maybe after about a week, Pa said that it was time for me to help him and that I could better help him if I wasn't chained.
+        Then he took off my clothes and and his, and he had sex with me.
+        I didn't even know that that was what that was called, but Ma explained it to me, and she said that I was lucky that I was Pa's favorite.
+        And Ma she wasn't locked up? No, she went upstairs.
+        Sometimes Pa would go away.
+        I would I would ask her to let me let me go, but she said she couldn't, that Pa was coming back.
+        She was just sitting in a McDonald's by herself for five hours.
+        The manager finally called the cops.
+        Any sign of the man she was with? No, he must've dumped her left her with no cash, no nothing.
+        She say anything? Just that she had to wait there.
+        It took two of us to haul her into the car.
+        Are you Ma? We're gonna need you to come with us.
+        No.
+        Pa's coming back.
+        He's coming back, and he won't find me.
+        - We brought this woman in? - We need to interrogate her.
+        - She's a victim.
+        - Or a suspect.
+        You heard Kayla.
+        She was in on the kidnap.
+        She had free rein of the house.
+        She was in control when he left.
+        No, no, Liv, she has classic Stockholm.
+        Look at her.
+        I mean, the woman has been brutalized.
+        What she needs right now is a psych eval, - not to be inter - Well, that can wait.
+        This guy is getting away.
+        She won't tell us her name or his.
+        Because she's covering for him.
+        - Or maybe she doesn't know it.
+        - You both could be right.
+        At the very least, she had this guy's trust.
+        She's our best shot to apprehend him.
+        And you think she's gonna open up to the two male cops that cuffed her and dragged her in here against her will? Let us talk to her.
+        Hi.
+        I'm Detective Rollins.
+        This is Detective Benson.
+        What's your name? Everyone calls me Ma.
+        We know that that was Pa's house rule, but we need to know your real name.
+        Or how about Pa's real name? Pa.
+        He didn't tell me any other name.
+        Are you sure? Because we know that you lived upstairs with him.
+        You shopped for him.
+        You you got to come and go.
+        Hmm? It wasn't like the other girls, like Rhonda, hmm, Kayla.
+        Auntie, Sissy.
+        We're gonna keep you safe.
+        He can't hurt you anymore.
+        You can't hold me here.
+        I want to go.
+        - No, you're not going anywhere.
+        - I haven't done anything.
+        Well, you were in the car.
+        You took Kayla.
+        You're as guilty as he is, okay? You're gonna be charged with kidnap, assault, rape.
+        - That's life in prison.
+        - I didn't rape nobody.
+        No, no, you just kept them chained up so he could.
+        They love me.
+        I took care of them.
+        It's okay.
+        No, no, you took care of yourself.
+        You see, Rhonda has nerve damage.
+        She will never be the same.
+        She was always trouble.
+        He had to do it.
+        She asked for it.
+        And Kayla asked for it? And Buddy asked for it? - He never hurt Buddy.
+        - He's a seven-year-old, terrified, locked in a basement his whole life! Stop, stop! He will never, ever, ever be the same.
+        Stop! I love Buddy! Detective My office, now.
+        I was getting somewhere.
+        No, you were attacking her.
+        She was shutting down.
+        I made a mistake.
+        You're too raw.
+        She knows who he is and where he is.
+        - I'm going back in there.
+        - No, you are not going back in.
+        You are going home.
+        It was too soon for you to come back to SVU.
+        Everyone's been sending toys, money.
+        Everybody wants to help you and Buddy.
+        I hope so.
+        I don't know.
+        S sometimes it's it just feels like the top of my head is gonna go flying off.
+        All that time, all I wanted was more more to do, more to see, different things to talk about.
+        Now I can do whatever I want, and I just I just want to stay in bed.
+        I'm just tired of of everyone looking at me like I'm gonna break.
+        I saw on the TV that you found Ma.
+        We did.
+        Buddy wants to see her.
+        When her face came on the TV, he touched the screen.
+        I don't know how to how to tell him that she's not his Ma.
+        The doctors are gonna help you with that tell you how, tell you when.
+        She must miss him.
+        All that time we were on the road, she just kept saying that she hoped that Buddy didn't think that we had left him behind.
+        If she wants to see him, that's fine with me.
+        I don't want to take anything from anybody.
+        Hey.
+        Olivia, listen, if Cragen sees you, he's gonna Ma did you talk to her today? Yeah.
+        But she's so traumatized, she's never giving him up.
+        What's this? It's something to trade for.
+        Okay, you want me to give it a shot? No.
+        I need to do this.
+        How long's this gonna take? This guy could be in South Carolina by now.
+        We keep going at her, she's gonna shut down for good.
+        Liv.
+        I was wrong before but she knows who he is, and I can get her to tell me.
+        How? I talked to Kayla at the hospital.
+        I said You're off this case, Olivia.
+        Cap, she can get through to her take my place in there.
+        If you can't trust me then I'm done.
+        - Buddy made that for me? - Yes.
+        He says that he misses you.
+        I miss him.
+        Sissy says that she's she's fine with you seeing Buddy.
+        - I don't believe you.
+        - Sissy has a good heart.
+        I know you know that.
+        And I know that you know that that she wouldn't lie about that.
+        When? You can have Buddy in your life but just not as his mother.
+        He needs to know the truth.
+        But you can still be family.
+        And all you have to do is talk to us.
+        Can you tell us Pa's name? I can't.
+        Can you tell us yours? I just can't say it.
+        Okay.
+        So how about you how about you write it down? Tell us the name that they used to call you when you were a little girl.
+        So, April Hendricks she went missing 18 years ago in Greenpoint.
+        She grew up two blocks from that house? Any connection to the Minettis? None we can find.
+        She was raised by a single mother, now deceased, a junkie.
+        Yeah, and there were allegations of abuse from the mother's drug-dealing boyfriend.
+        April ran away from home multiple times.
+        So N.
+        Y.
+        P.
+        D.
+        didn't work the case? No, police questioned a few suspects two are dead.
+        And one, Michael Williams, whereabouts unknown, was a maintenance worker at her parochial school.
+        Some of the students say she had a crush on him.
+        Claimed he was counseling her.
+        Police ruled him out.
+        The school has no contact for him? No, it closed down five years ago.
+        Track down everybody who worked there.
+        See if they know where he is.
+        I wasn't a principal then.
+        I was a teacher.
+        This poor girl everyone thought she ran away.
+        She's the one on the news? Yeah, she was held prisoner for 18 years.
+        Mm.
+        Horrible story.
+        At the time, the police questioned a maintenance worker.
+        Michael Williams.
+        They said he didn't have anything to do with it you know where he is now? I can get you his phone number.
+        He works here.
+        He had an accident a few days ago.
+        He's on sick leave.
+        - Police! - Open up! Can I help you? We're looking for Michael Williams.
+        That's my husband.
+        What's this about? Is your husband home? He's in the back playing with our boys.
+        - Can you tell me why - Ma'am, please just back up.
+        Michael Williams.
+        Yeah.
+        Who the hell are you? N.
+        Y.
+        P.
+        D.
+        Game's over, player.
+        Come on.
+        Slaves? - That's what the girls told you? - No.
+        That's what the chains, the fences, and tasers told us.
+        I was the slave.
+        I worked my ass off for them.
+        I clothed them, fed them, took care of their needs.
+        Is that what you call raping them? There's no mistake.
+        He kept three women imprisoned in Angie Minetti's house for 18 years.
+        I worked there, taking care of his mother.
+        - I would have known.
+        - It wasn't his mother.
+        I mean, they didn't even share the same last name.
+        After his parents' divorce, she went back to her maiden name.
+        He tells me everything.
+        April and Rhonda they came after me.
+        April was 12 when you took her.
+        - No, when I saved her.
+        - Like you saved Rhonda beat her and put her in the backyard with the dogs.
+        She was on drugs.
+        She was out of control.
+        I was the only stability in her life.
+        I told you I do not know these women.
+        I took care of his mother upstairs.
+        - That was my job.
+        - Until she died? What? She's not dead.
+        She has Alzheimer's.
+        Michael stays with her all week long taking care of her.
+        No, you know what? That's not who he's taking care of.
+        Angie Minetti died nine years ago.
+        Kayla Greyland she was ten.
+        Kayla was was different.
+        She was she was special.
+        But it was it was for the greater good, see, 'cause I'm not evil.
+        I got problems and she she helped me.
+        And after her, I di I didn't need any others.
+        He's a good man.
+        He's so good with the boys.
+        He taught me English, helped me stay in this country.
+        By marrying you.
+        Then he moved you to the Poconos? Yes.
+        Tell me more about that.
+        He said it would be better for the children.
+        The city he said it was filled with bad men.
+        Angie Minetti was a friend of my mother's.
+        I took care of that woman.
+        I got her house in shape.
+        Well, see, the neighbors they think you were that woman's son, right? Your wife does too.
+        Yeah, well, I was like a son to her.
+        Till you killed her.
+        What, did she find out about the girls in the basement? She didn't find out.
+        And, no, I didn't kill her.
+        One morning I took in some breakfast, and she was gone.
+        So, naturally, you buried her in the backyard and kept cashing her social security checks.
+        I didn't kill her.
+        No.
+        What'd you think was gonna happen to Rhonda, the girl you left chained in the basement, when you took off with Ma and Sis? Well, you can't save them all.
+        Look, I was gonna call for help, you know, or I was gonna go there myself and and get her after I found us a place.
+        But then Kayla she took off.
+        And what was I to do with with just Ma? But I saved those girls.
+        They're alive because of me me! I gave them life.
+        I gave I gave Kayla a son.
+        He's my boy.
+        His wife didn't know any of this? I believe her.
+        She was compliant.
+        It's a green card marriage doesn't ask questions.
+        What about April Hendricks Ma? She knew all of it.
+        Uh, he took her when she was 12.
+        She thinks that it was consensual because he saved her from her mother's boyfriend.
+        You cannot be thinking of charging her.
+        She did help keep Kayla and Rhonda imprisoned.
+        She is still scared to death.
+        She is a shell.
+        She needs long-term help not more punishment.
+        I hear you.
+        I hear you.
+        She's suffered enough.
+        But this guy there's not enough suffering on earth for him.
+        He's never gonna see the light of day again.
+        The guy's a coward.
+        He kept those girls locked up all that time.
+        I wonder how long he'll last in prison.
+        Think he'll kill himself? So what if he does? Why can't we go? They're working on moving the press away.
+        This, uh this isn't gonna be easy.
+        I don't care about me.
+        It's it's Buddy.
+        I tried the best I could, teaching him, but I didn't want him to know too much about the outside because I was afraid that he would want things that he couldn't have.
+        I want him I want him to go to school and have friends and family and a normal life.
+        And he's never gonna be normal, is he? He doesn't even have a name.
+        You know, what I've seen is that people who have gone through unfair, horrific experiences, is that they have this will.
+        And when they get support a chance they cannot only survive, they can thrive.
+        Buddy.
+        Buddy, wake up.
+        We're home.
+        We're home.
+        I'm glad you decided to come back.
+        How have you been? Better.
+      </textarea>
+    </p>
+
+    <p>
+        order:
+        <select id="order">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+      </select>
+    </p>
+
+    <p>
+        length: <input type="text" size="5" id="length" value="50"></input>
+    </p>
+
+    <p>
+        <button id="generate">generate</button>
+        <button id="clear">clear</button>
+    </p>
+
+    <p id="results"></p>
+</body>
+
+</html>
